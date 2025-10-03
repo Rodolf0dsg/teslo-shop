@@ -30,7 +30,6 @@ export const CustomPagination = ({ totalPages }: Props) => {
         className='cursor-pointer'
       >
         <ChevronLeft className="h-4 w-4" />
-        Anteriores
       </Button>
 
       {Array.from({ length: totalPages }).map((_, index) => (
@@ -45,6 +44,30 @@ export const CustomPagination = ({ totalPages }: Props) => {
         </Button>
       ))}
 
+      {/* {Array.from({ length: totalPages }).map((_, index) => {
+          const pageNumber = index + 1;
+          const isVisible =
+            pageNumber === 1 ||
+            pageNumber === totalPages ||
+            Math.abs(pageNumber - page) <= 2;
+
+          return isVisible ? (
+            <Button
+              key={index}
+              variant={page === pageNumber ? 'default' : 'outline'}
+              size="sm"
+              onClick={() => handlePageChange(pageNumber)}
+              className="cursor-pointer"
+            >
+              {pageNumber}
+            </Button>
+          ) : (
+            pageNumber === page - 3 || pageNumber === page + 3 ? (
+              <span key={index} className="px-2">...</span>
+            ) : null
+          );
+        })} */}
+
       <Button
         variant="outline"
         size="sm"
@@ -52,7 +75,6 @@ export const CustomPagination = ({ totalPages }: Props) => {
         onClick={() => handlePageChange(page + 1)}
         className='cursor-pointer'
       >
-        Siguientes
         <ChevronRight className="h-4 w-4" />
       </Button>
     </div>

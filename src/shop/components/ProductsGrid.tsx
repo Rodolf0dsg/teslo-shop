@@ -24,7 +24,7 @@ export const ProductsGrid = ({products}: Props) => {
     };
 
   return (
-      <section className="py-12 px-4 lg:px-8">
+      <section className="py-12 px-4 lg:px-8 overflow-x-hidden">
         <div className="container mx-auto">
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center space-x-4">
@@ -72,7 +72,7 @@ export const ProductsGrid = ({products}: Props) => {
 
             {/* Mobile Filters */}
             {showFilters && (
-              <div className="fixed inset-0 z-50 bg-background p-4 lg:hidden">
+              <div className="fixed inset-0 z-50 bg-background p-4 lg:hidden overflow-x-hidden">
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-lg font-semibold">Filtros</h3>
                   <Button 
