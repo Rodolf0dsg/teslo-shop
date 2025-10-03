@@ -1,69 +1,81 @@
-# React + TypeScript + Vite
+# 🛍️ Teslo Shop — E-commerce Frontend
+[![en](https://img.shields.io/badge/lang-en-red.svg)](README.md)
+[![es](https://img.shields.io/badge/lang-es-yellow.svg)](README.es.md)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+Teslo Shop is a web-based e-commerce application built with React and Vite. It allows users to browse clothing, filter by size and price, and view products through a modern interface. It includes an admin panel to manage the catalog, but does not feature a shopping cart or payment gateway.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React 19** — Main library for building interfaces  
+- **Vite** — Ultra-fast bundler for development and production  
+- **Tailwind CSS 4** — Utility-first and responsive styling  
+- **ShadCN UI + Radix UI** — Accessible and customizable components  
+- **Zustand** — Global state management  
+- **React Router 7** — View navigation  
+- **React Hook Form** — Form handling  
+- **Axios** — REST API consumption  
+- **TanStack Query** — Data fetching and caching  
+- **Sonner** — Elegant notifications  
+- **TypeScript** — Static typing for greater robustness
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 📦 Local Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/teslo-shop
+cd teslo-shop
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 2. Install dependencies
+```bash
+npm install
 ```
+
+### 3. Set up environment variables
+```bash
+VITE_API_URL=http://localhost:3000/api
+```
+
+## Available scripts
+```bash
+npm run dev       # Starts the development server
+npm run build     # Builds for production
+npm run preview   # Previews the production build
+npm run lint      # Runs ESLint
+```
+
+---
+
+## Features
+
+- ✅ Filter by size and price
+- ✅ Product display
+- ✅ Admin panel to create, edit, and delete products
+- ✅ JWT authentication (consumed from the backend)
+
+Note: It does not include a shopping cart or payment gateway.
+
+---
+
+### 🌐 Production preview
+
+You can explore the live application here:
+
+**🔗 [Teslo Shop — Preview](https://testlo-e-commerce.netlify.app/)** 
+
+⚠️  **Important Note:** The backend is hosted for free on [Render](https://render.com/), which may cause a delay of up to **50 seconds** on the first response while the server wakes up. Please be patient when logging in or loading products.
+
+---
+
+### 🔐 Test User (Admin panel)
+
+To access the admin panel and explore protected features, you can use the following credentials:
+
+- **Email:** `test1@google.com`  
+- **Password:** `Abc123`
