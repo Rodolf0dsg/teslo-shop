@@ -1,5 +1,4 @@
 import ActivityFeed from "@/admin/components/ActivityFeed";
-import { AdminHeader } from "@/admin/components/AdminHeader";
 import { AdminTitle } from "@/admin/components/AdminTitle";
 import Chart from "@/admin/components/Chart";
 import QuickActions from "@/admin/components/QuickActions";

@@ -1,13 +1,7 @@
 import React from 'react';
 import { 
-  Home, 
-  Users, 
+  Home,
   BarChart3, 
-  Settings, 
-  FileText, 
-  ShoppingCart, 
-  Bell, 
-  HelpCircle,
   ChevronLeft,
   ChevronRight
 } from 'lucide-react';
