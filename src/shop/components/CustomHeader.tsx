@@ -1,7 +1,7 @@
 import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router";
 import { cn } from "@/lib/utils";
 import { CustomLogo } from "@/components/custom/CustomLogo";
@@ -11,9 +11,11 @@ import { useAuthStore } from "@/auth/store/auth.store";
 
 export const CustomHeader = () => {
 
-  const { authStatus, logut, isAdmin } = useAuthStore();
+  const [ showInput, setShowInput ]         = useState(false);
+  const { authStatus, logut, isAdmin }    = useAuthStore();
   const [ searchParams, setSearchParams ] = useSearchParams();
   const { gender } = useParams();
+
 
   const inputRef = useRef<HTMLInputElement>(null);
   const searchQuery = searchParams.get('query') || '';
@@ -84,9 +86,34 @@ export const CustomHeader = () => {
               </div>
             </div>
             
-            <Button variant="ghost" size="icon" className="md:hidden">
+            {/* <Button variant="ghost" size="icon" className="md:hidden">
+              <Search className="h-5 w-5" />
+            </Button> */}
+
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden z-100"
+              onClick={() => setShowInput(prev => !prev)}
+            >
               <Search className="h-5 w-5" />
             </Button>
+
+            <div
+              className={`absolute left-32 transition-all duration-300 ease-in-out ${
+                showInput ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
+              }`}
+            >
+              <Input
+                type="text"
+                placeholder="Buscar..."
+                className="w-48"
+                ref={ inputRef }
+                onKeyDown={ handleSearch }
+                defaultValue={ searchQuery }
+              />
+            </div>
+
 
             { authStatus === 'not-authenticated' ? (
                 <Link to={'/auth/login'}>
