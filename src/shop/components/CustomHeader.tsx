@@ -107,7 +107,7 @@ export const CustomHeader = () => {
               <Input
                 type="text"
                 placeholder="Buscar..."
-                className="w-48"
+                className="w-[50%]"
                 ref={ inputRef }
                 onKeyDown={ handleSearch }
                 defaultValue={ searchQuery }
@@ -117,7 +117,7 @@ export const CustomHeader = () => {
 
             { authStatus === 'not-authenticated' ? (
                 <Link to={'/auth/login'}>
-                  <Button variant="default" size="sm" className="ml-2 cursor-pointer">
+                  <Button variant="default" size="sm" className="ml-2 cursor-pointer z-50">
                     Login
                   </Button>
                 </Link>
